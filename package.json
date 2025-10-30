@@ -1,0 +1,41 @@
+{
+	"name": "khillona-buddy",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@iconify/svelte": "^4.2.0",
+		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/kit": "^2.26.1",
+		"@sveltejs/vite-plugin-svelte": "^4.0.4",
+		"@tailwindcss/typography": "^0.5.16",
+		"autoprefixer": "^10.4.21",
+		"daisyui": "^5.0.47",
+		"svelte": "^5.36.17",
+		"tailwindcss": "^4.1.11",
+		"vite": "^5.4.19"
+	},
+	"dependencies": {
+		"@sveltejs/adapter-vercel": "^5.8.1",
+		"@tailwindcss/vite": "^4.1.11",
+		"@tiptap/core": "^2.11.5",
+		"@tiptap/extension-blockquote": "^2.11.5",
+		"@tiptap/extension-bold": "^2.11.5",
+		"@tiptap/extension-code-block": "^2.11.5",
+		"@tiptap/extension-italic": "^2.11.5",
+		"@tiptap/extension-link": "^2.11.5",
+		"@tiptap/extension-placeholder": "^2.11.5",
+		"@tiptap/extension-typography": "^2.11.5",
+		"@tiptap/extension-underline": "^2.11.5",
+		"@tiptap/starter-kit": "^2.11.5",
+		"chart.js": "^4.5.0",
+		"js-cookie": "^3.0.5",
+		"jspdf": "^2.5.2",
+		"jspdf-autotable": "^3.8.4",
+		"nprogress": "^0.2.0"
+	}
+}

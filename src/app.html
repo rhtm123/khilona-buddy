@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- <link rel="icon" href="%sveltekit.assets%/favicon.png" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	
+	<script>
+(function() {
+  try {
+    // 0️⃣ Decide which theme to apply (default: "light")
+    var selectedThemeName = localStorage.getItem("selectedTheme") || "light";
+
+    // 1️⃣ Apply last saved theme instantly
+    var allThemes = localStorage.getItem("themes");
+    if (allThemes) {
+      try {
+        allThemes = JSON.parse(allThemes);
+        var theme = allThemes[selectedThemeName];
+        if (theme) {
+          for (var key in theme) {
+            document.documentElement.style.setProperty(key, theme[key]);
+          }
+        }
+      } catch (err) {
+        console.warn("Invalid saved themes:", err);
+      }
+    }
+
+    // 2️⃣ Fetch fresh themes in background (async)
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/api/themes", true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        try {
+          var fetchedThemes = JSON.parse(xhr.responseText);
+
+          // Save all themes
+          localStorage.setItem("themes", JSON.stringify(fetchedThemes));
+
+          // Apply selected theme immediately
+          var selectedTheme = fetchedThemes[selectedThemeName];
+          if (selectedTheme) {
+            for (var key in selectedTheme) {
+              document.documentElement.style.setProperty(key, selectedTheme[key]);
+            }
+
+			if (selectedTheme["--font-url"]) {
+            var link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = selectedTheme["--font-url"];
+            document.head.appendChild(link);
+          }
+
+          }
+        } catch (err) {
+          console.error("Failed to apply fetched themes:", err);
+        }
+      }
+    };
+    xhr.send(null);
+
+  } catch (e) {
+    console.error("Theme load failed", e);
+  }
+})();
+</script>
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-01BMN1GKTB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-01BMN1GKTB');
+	</script>
+	%sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
+
+</html>
