@@ -235,7 +235,7 @@
   <input
     bind:this={searchInput}
     type="text"
-    class="w-full px-4 py-2 md:py-3 bg-gray-100 rounded-full border border-blue-200 focus:border-blue-500 focus:outline-none text-base md:text-md"
+    class="w-full px-4 py-2 md:py-3 bg-gray-100 rounded-full border border-secondary/30 focus:border-secondary focus:outline-none text-base md:text-md"
     placeholder="Search products and services..."
     value={searchQuery}
     oninput={handleSearchInput}
@@ -337,20 +337,20 @@
     {#if searchResults.categories.length > 0}
       <div class="mb-8" in:fly={{ y: 20, duration: 300 }}>
         <h2 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <Icon icon="mdi:tag-multiple" class="w-5 h-5 text-blue-600" />
+          <Icon icon="mdi:tag-multiple" class="w-5 h-5 text-secondary" />
           Related Categories
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {#each searchResults.categories as category}
             <button 
               onclick={() => handleCategoryClick(category)}
-              class="flex items-center gap-3 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors text-left"
+              class="flex items-center gap-3 p-3 bg-secondary/10 hover:bg-secondary/20 rounded-lg transition-colors text-left"
             >
-              <div class="w-10 h-10 bg-blue-200 rounded-lg flex items-center justify-center overflow-hidden">
+              <div class="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center overflow-hidden">
                 {#if category.image}
                   <img src={category.image || "/placeholder.svg"} alt={category.name} class="w-full h-full object-cover" />
                 {:else}
-                  <Icon icon="mdi:tag" class="w-5 h-5 text-blue-600" />
+                  <Icon icon="mdi:tag" class="w-5 h-5 text-secondary" />
                 {/if}
               </div>
               <span class="font-medium text-gray-900">{category.name}</span>
@@ -370,13 +370,13 @@
       <div class="mb-8" in:fly={{ y: 20, duration: 300, delay: 100 }}>
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
-            <Icon icon="mdi:package-variant" class="w-5 h-5 text-blue-600" />
+            <Icon icon="mdi:package-variant" class="w-5 h-5 text-secondary" />
             Products ({searchResults.totalProducts})
           </h2>
           {#if searchResults.totalProducts > searchResults.products.length}
             <a 
               href="/shop?q={encodeURIComponent(searchQuery)}"
-              class="text-blue-600 hover:text-blue-700 text-sm font-medium"
+              class="text-secondary hover:text-secondary/90 text-sm font-medium"
             >
               View all products →
             </a>
@@ -395,13 +395,13 @@
       <div class="mb-8" in:fly={{ y: 20, duration: 300, delay: 200 }}>
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
-            <Icon icon="mdi:hand-heart" class="w-5 h-5 text-blue-600" />
+            <Icon icon="mdi:hand-heart" class="w-5 h-5 text-secondary" />
             Services ({searchResults.totalServices})
           </h2>
           {#if searchResults.totalServices > searchResults.services.length}
             <a 
               href="/services?q={encodeURIComponent(searchQuery)}"
-              class="text-blue-600 hover:text-blue-700 text-sm font-medium"
+              class="text-secondary hover:text-secondary/90 text-sm font-medium"
             >
               View all services →
             </a>
@@ -429,7 +429,7 @@
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a 
             href="/shop"
-            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
           >
             Browse Products
           </a>

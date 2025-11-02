@@ -34,7 +34,7 @@
     });
   </script>
   
-  <div class="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
+  <div class="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300 flex items-center justify-center">
     <div class="relative w-full">
       <!-- Floating Toys Animation -->
       <div class="absolute inset-0 overflow-hidden">

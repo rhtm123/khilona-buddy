@@ -29,7 +29,7 @@
 
 body {
   font-family: 'Nunito', var(--font-family);
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #fff8e7 0%, #e0f2ff 40%, #e6fff5 100%);
   min-height: 100vh;
 }
 
@@ -40,20 +40,29 @@ body {
   name: light;
   default: true;
   color-scheme: light;
-  --color-primary: #6366f1;
-  --color-secondary: #06b6d4;
-  --color-accent: #f59e0b;
-  --color-neutral: #374151;
-  --color-base-100: #FFFFFF;
-  --color-base-200: #f8fafc;
-  --color-base-300: #e2e8f0;
-  --color-info: #3b82f6;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
+  /* Brand palette */
+  --color-primary: #ff3b30;     /* Bright Red */
+  --color-secondary: #2563eb;   /* Vibrant Blue (minimized usage) */
+  --color-accent: #facc15;      /* Sunny Yellow */
+  --color-neutral: #334155;     /* Slate */
+  --color-base-100: #fff8e7;    /* Cream */
+  --color-base-200: #e0f2ff;    /* Sky Blue */
+  --color-base-300: #e6fff5;    /* Mint */
+  --color-info: #22c55e;        /* Green info */
+  --color-success: #16a34a;     /* Green */
+  --color-warning: #facc15;     /* Yellow */
+  --color-error: #ef4444;       /* Red */
 }
 
 @plugin '@tailwindcss/typography';
+
+/* Brand gradient text utility */
+.brand-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 /* Toy Store Custom Animations */
 @keyframes bounce-gentle {
@@ -96,6 +105,77 @@ body {
   animation: bounce-gentle 2s ease-in-out infinite;
 }
 
+/* Wave text for hero title */
+@keyframes waveY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.wave-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+.wave-text span {
+  display: inline-block;
+  animation: waveY 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wave-text span { animation: none; }
+}
+
+/* Dropping texts animation (brand-aligned) */
+.dropping-texts {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  width: 16ch; /* reserve space for the longest phrase */
+  vertical-align: baseline;
+}
+.dropping-texts > .drop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  transform-origin: left bottom;
+}
+@keyframes drop-roll {
+  0%   { opacity: 0; transform: translateY(0) rotate(-15deg) scale(0.96); }
+  6%   { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  20%  { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  28%  { opacity: 0.6; transform: translate(8px, 32px) rotate(10deg) scale(0.98); }
+  100% { opacity: 0; transform: translateY(0) rotate(15deg) scale(0.96); }
+}
+@keyframes drop-blast {
+  0%   { opacity: 0; transform: translateY(0) rotate(-15deg) scale(0.96); }
+  6%   { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  24%  { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  34%  { opacity: 0; transform: translate(-120px, -80px) rotate(-15deg) scale(2.2); }
+  100% { opacity: 0; transform: translateY(0) rotate(15deg) scale(0.96); }
+}
+.dropping-texts > .drop:nth-child(1) { animation: drop-roll 6s linear infinite 0s; }
+.dropping-texts > .drop:nth-child(2) { animation: drop-roll 6s linear infinite 1.5s; }
+.dropping-texts > .drop:nth-child(3) { animation: drop-roll 6s linear infinite 3s; }
+.dropping-texts > .drop:nth-child(4) { animation: drop-blast 6s linear infinite 4.5s; }
+@media (prefers-reduced-motion: reduce) {
+  .dropping-texts > .drop { animation: none; opacity: 1; }
+}
+
+/* Typewriter effect */
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--color-primary);
+}
+@keyframes caret-blink {
+  0%, 49% { border-color: var(--color-primary); }
+  50%, 100% { border-color: transparent; }
+}
+.caret {
+  animation: caret-blink 1s step-end infinite;
+}
+
 .animate-wiggle {
   animation: wiggle 1s ease-in-out infinite;
 }
@@ -105,7 +185,7 @@ body {
 }
 
 .animate-rainbow {
-  background: linear-gradient(270deg, #6366f1, #06b6d4, #f59e0b, #3b82f6, #6366f1);
+  background: linear-gradient(270deg, #ff3b30, #facc15, #ff3b30);
   background-size: 400% 400%;
   animation: rainbow 4s ease infinite;
 }
@@ -116,11 +196,11 @@ body {
 
 /* Sophisticated gradient backgrounds */
 .bg-toy-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #e2e8f0 50%, #f1f5f9 75%, #ffffff 100%);
+  background: linear-gradient(135deg, #fff8e7 0%, #e0f2ff 50%, #e6fff5 100%);
 }
 
 .bg-fun-gradient {
-  background: linear-gradient(45deg, #6366f115, #06b6d415, #f59e0b15, #3b82f615);
+  background: linear-gradient(45deg, rgba(255,59,48,0.08), rgba(250,204,21,0.08));
 }
 
 /* Glassmorphism effects */
@@ -132,11 +212,11 @@ body {
 
 /* Modern shadow variations */
 .shadow-toy {
-  box-shadow: 0 10px 25px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+  box-shadow: 0 10px 25px -3px rgba(255, 59, 48, 0.10), 0 4px 6px -2px rgba(250, 204, 21, 0.08);
 }
 
 .shadow-fun {
-  box-shadow: 0 20px 25px -5px rgba(6, 182, 212, 0.1), 0 10px 10px -5px rgba(6, 182, 212, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(255, 59, 48, 0.10), 0 10px 10px -5px rgba(250, 204, 21, 0.08);
 }
 
 /* Scroll animations */

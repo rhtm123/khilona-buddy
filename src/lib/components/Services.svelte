@@ -290,7 +290,7 @@
             </button>
             <span>{currentCategory.name}</span>
           {:else}
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
             <span>All Services</span>
@@ -303,7 +303,7 @@
             <div class="relative">
               <a 
                 href="/services/{category.slug}"
-                class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'}"
+                class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-secondary/10 text-secondary font-medium' : 'text-gray-700'}"
               >
                 <div class="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center shadow-sm overflow-hidden">
                   <img 
@@ -364,7 +364,7 @@
           <div class="flex-1 overflow-y-auto p-4">
             {#if loading}
               <div class="flex justify-center items-center py-8">
-                <div class="loading loading-spinner loading-md text-blue-500"></div>
+                <div class="loading loading-spinner loading-md text-secondary"></div>
               </div>
             {:else if error}
               <div class="text-center py-8">

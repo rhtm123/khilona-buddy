@@ -275,7 +275,7 @@
         <a 
           href="/shop/{category.slug}"
           class="px-3 py-1.5 text-sm whitespace-nowrap rounded-full border border-gray-300 transition-colors 
-                {category.id === currentCategory?.id ? 'bg-blue-500 text-white border-blue-500 hover:bg-blue-600' : 'text-gray-700 hover:bg-gray-50'}"
+                {category.id === currentCategory?.id ? 'bg-secondary text-white border-secondary hover:bg-secondary/90' : 'text-gray-700 hover:bg-gray-50'}"
         >
           {category.name}
         </a>
@@ -295,12 +295,12 @@
             {#if currentCategory}
               <div class="flex items-center gap-2">
                 {#if immediateParentCategory}
-                  <a href={`/shop/${immediateParentCategory.slug}`} class="text-blue-600 hover:underline flex items-center">
+                  <a href={`/shop/${immediateParentCategory.slug}`} class="text-secondary hover:underline flex items-center">
                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 
                   </a>
                 {:else}
-                  <a href="/shop" class="text-blue-600 hover:underline flex items-center">
+                  <a href="/shop" class="text-secondary hover:underline flex items-center">
                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                    
                   </a>
@@ -320,7 +320,7 @@
                 <div class="relative">
                   <a 
                     href="/shop/{category.slug}"
-                    class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'}"
+                    class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-secondary/10 text-secondary font-medium' : 'text-gray-700'}"
                   >
                     <div class="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center shadow-sm overflow-hidden">
                       <img 
@@ -391,7 +391,7 @@
                   <p class="text-sm">Try adjusting your filters or search query</p>
                 </div>
               {:else}
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 md:px-0">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:px-0 place-items-stretch">
                   {#each products as product (product.id)}
                     <Product {product} />
                   {/each}
@@ -524,7 +524,7 @@
           <button
             class="w-full text-left p-3 rounded-lg text-sm
                    {sortOption === option.value 
-                     ? 'bg-blue-50 text-blue-600 font-medium' 
+                     ? 'bg-secondary/10 text-secondary font-medium' 
                      : 'text-gray-700 hover:bg-gray-50'}"
             on:click={() => {
               sortOption = option.value;

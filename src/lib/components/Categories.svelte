@@ -179,7 +179,7 @@
           </button>
           <span>{currentCategory.name}</span>
         {:else}
-          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
           <span>All Categories</span>
@@ -192,7 +192,7 @@
           <div class="relative">
             <a 
               href="/shop/{category.slug}"
-              class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'}"
+              class="w-full p-3 flex items-center gap-3 hover:bg-gray-50 rounded-lg transition-colors text-left {currentCategory?.id === category.id ? 'bg-secondary/10 text-secondary font-medium' : 'text-gray-700'}"
               on:click|preventDefault={() => navigateToCategory(category.slug)}
             >
               <div class="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center shadow-sm overflow-hidden">

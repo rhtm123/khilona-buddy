@@ -117,7 +117,7 @@
 
 <button
     onclick={toggleCart}
-    class="cart-button relative flex items-center p-2 rounded-full text-gray-700 hover:text-blue-600 transition-colors"
+    class="cart-button relative flex items-center p-2 rounded-full text-gray-700 hover:text-secondary transition-colors"
   >
   <Icon icon="mdi:cart-outline" width="28" height="28" />
   {#if cartCount > 0}
@@ -180,14 +180,14 @@
     {/if}
 
     <!-- Delivery Info (Info Box) -->
-    <div class="  p-3 bg-blue-50 border border-blue-200 rounded-lg">
+    <div class="  p-3 bg-secondary/10 border border-secondary/20 rounded-lg">
       <div class="flex items-center gap-2">
-        <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
+        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
           <Icon icon="mdi:cart-outline" class="w-4 h-4 text-white" />
         </div>
         <div>
-          <p class="text-sm font-medium text-blue-900">{$infoBoxText}</p>
-          <p class="text-xs text-blue-700">Your selected items are ready for checkout</p>
+          <p class="text-sm font-medium text-secondary">{$infoBoxText}</p>
+          <p class="text-xs text-secondary/80">Your selected items are ready for checkout</p>
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
           <p class="text-gray-500 mb-4">Add some items to get started</p>
           <button 
             onclick={handleClose}
-            class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium"
+            class="bg-secondary hover:bg-secondary/90 text-white px-5 py-2 rounded-lg font-medium"
           >
             Continue Shopping
           </button>
@@ -352,15 +352,15 @@
     <div class="sticky bottom-0 left-0 right-0 bg-white z-10 border-t border-gray-200 px-4 pt-2 pb-4">
       <!-- Total Savings Banner -->
       {#if totalSavings > 0}
-        <div class="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg px-2 py-1 mb-2">
+        <div class="bg-gradient-to-r from-accent/10 to-secondary/10 border border-secondary/20 rounded-lg px-2 py-1 mb-2">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <Icon icon="mdi:tag-multiple" class="w-4 h-4 text-blue-600" />
-              <span class="text-blue-800 font-semibold text-base">Your total savings</span>
+              <Icon icon="mdi:tag-multiple" class="w-4 h-4 text-secondary" />
+              <span class="text-secondary font-semibold text-base">Your total savings</span>
             </div>
-            <span class="text-green-700 font-bold">{formatPrice(totalSavings)}</span>
+            <span class="text-primary font-bold">{formatPrice(totalSavings)}</span>
           </div>
-          <p class="text-xs text-blue-700 mt-1">🎉 You're saving big on this order!</p>
+          <p class="text-xs text-secondary mt-1">🎉 You're saving big on this order!</p>
         </div>
       {/if}
       <!-- Checkout Button -->

@@ -81,7 +81,7 @@
 <nav 
   use:clickOutside
   on:outclick={handleNavClickOutside}
-  class="bg-white/95 backdrop-blur-md border-b border-indigo-100 fixed top-0 w-full z-20 shadow-lg"
+  class="bg-white/95 backdrop-blur-md border-b border-secondary/20 fixed top-0 w-full z-20 shadow-lg"
 >
 
     <!-- Modern Navbar -->
@@ -91,7 +91,7 @@
         <div class="flex items-center">
           <a href="/" class="md:hidden flex-shrink-0 transform hover:scale-105 transition-transform">
             <div class="flex items-center gap-2">
-              <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
                 </svg>
@@ -101,14 +101,14 @@
           </a>
           <a href="/" class="hidden md:block flex-shrink-0 transform hover:scale-105 transition-transform">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
                 <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
                 </svg>
               </div>
               <div>
                 <h1 class="font-bold text-xl text-gray-900">KhillonaBuddy</h1>
-                <p class="text-xs text-indigo-600 font-medium">Fun Learning Toys</p>
+                <p class="text-xs text-secondary font-medium">Fun Learning Toys</p>
               </div>
             </div>
           </a>
@@ -182,7 +182,7 @@
               {/if}
             </div>
           {:else}
-            <a href="/login" class="flex items-center gap-1 p-2 rounded-full text-gray-700 hover:text-blue-600">
+            <a href="/login" class="flex items-center gap-1 p-2 rounded-full text-gray-700 hover:text-secondary">
               <Icon icon="mdi:account-outline" width="24" height="24" />
               <span class="text-sm font-medium hidden md:inline">Sign Up/Sign In</span>
             </a>

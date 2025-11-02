@@ -9,7 +9,7 @@
 //   console.log("Footer estore", estore);
 </script>
 
-<footer class="bg-base-200 py-12 relative overflow-hidden">
+<footer class="bg-gradient-to-b from-base-100 via-white to-base-200 py-12 relative overflow-hidden">
   <!-- Decorative Stars -->
   {#each [
       { size: "w-6 h-6", top: "top-4", right: "right-4", delay: 200 },
@@ -17,7 +17,7 @@
       { size: "w-5 h-5", top: "top-2", right: "right-20", delay: 600 }
   ] as star}
       <div class="absolute {star.top} {star.right}" in:fly={{ y: -20, duration: 1000, delay: star.delay }}>
-          <Icon icon="mdi:star" class="{star.size} text-yellow-300" />
+          <Icon icon="mdi:star" class="{star.size} text-accent" />
       </div>
   {/each}
 
@@ -26,7 +26,6 @@
           <!-- Company Info -->
           <div class="space-y-4">
               <img 
-                
                   src={estore?.logo || "/img/naigaonmarketlogo1.png" }
                   alt={estore?.name || " Logo"}
                   class="h-16"
@@ -46,7 +45,6 @@
               <div class="flex space-x-4 mt-6">
                   {#each [
                       { name: "facebook", icon: "mdi:facebook", url:estore?.social_accounts?.facebook || "https://www.facebook.com/profile.php?id=100088926467895" },
-                    //   { name: "twitter", icon: "mdi:twitter" },
                       { name: "instagram", icon: "mdi:instagram", url:estore?.social_accounts?.instagram || "https://www.instagram.com/naigaonmarket/" },
                       { name: "whatsapp", icon: "mdi:whatsapp", url:estore?.social_accounts?.whatsapp || "https://whatsapp.com/channel/0029Vb7g3Q21Hsq2NLrtZX28" }
                   ] as social}
@@ -78,7 +76,7 @@
           </div>
       </div>
       
-      <div class="mt-12 text-center text-xs border-t opacity-75">
+      <div class="mt-12 text-center text-xs border-t border-gray-200/60 text-gray-600">
           &copy; {new Date().getFullYear()} {estore?.name}. All rights reserved.
       </div>
   </div>

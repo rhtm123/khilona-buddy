@@ -47,7 +47,7 @@
 </script>
 
 <!-- Compact Service Card for Grid Layout -->
-<div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden border border-gray-100 hover:border-blue-200 h-full flex flex-col">
+<div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden border border-gray-100 hover:border-secondary/30 h-full flex flex-col">
   
   <!-- Service Image Section -->
   <div class="relative h-32 overflow-hidden">
@@ -88,13 +88,13 @@
     
     <!-- Service Title -->
     <div class="mb-2">
-      <a href="/service/{service.slug}" class="block hover:text-blue-600 transition-colors">
+      <a href="/service/{service.slug}" class="block hover:text-secondary transition-colors">
         <h3 class="font-medium text-sm text-gray-900 line-clamp-2 leading-tight">
           {service.name}
         </h3>
       </a>
       {#if service.category}
-        <span class="text-xs text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded mt-1 inline-block">
+        <span class="text-xs text-secondary bg-secondary/10 px-1.5 py-0.5 rounded mt-1 inline-block">
           {service.category.name}
         </span>
       {/if}
@@ -103,8 +103,8 @@
     <!-- Service Provider -->
     {#if service.brand}
       <div class="mb-2 flex items-center gap-2">
-        <div class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center">
-          <span class="text-blue-600 font-bold text-xs">
+        <div class="w-5 h-5 bg-secondary/10 rounded-full flex items-center justify-center">
+          <span class="text-secondary font-bold text-xs">
             {service.brand.name.charAt(0).toUpperCase()}
           </span>
         </div>
@@ -121,7 +121,7 @@
     <div class="mb-2 flex items-center justify-between">
       {#if service.rating > 0}
         <div class="flex items-center gap-1">
-          <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
           </svg>
           <span class="text-xs font-medium text-gray-700">{service.rating}</span>
@@ -188,7 +188,7 @@
           </div>
         {:else}
           <button 
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-3 rounded transition-colors text-xs"
+            class="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-2 px-3 rounded transition-colors text-xs"
             onclick={handleBookService}
           >
             BOOK NOW
