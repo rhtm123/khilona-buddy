@@ -38,7 +38,6 @@
   <meta property="og:title" content={homePage?.meta_title || 'Khillona Buddy – The Ultimate Kids Toy Store'} />
   <meta property="og:description" content={homePage?.meta_description || 'Discover amazing toys that combine fun and learning! Safe, high-quality toys for kids of all ages with fast delivery.'} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/toy-store-preview.jpg" />
 </svelte:head>
 
 
