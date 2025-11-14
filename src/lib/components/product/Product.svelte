@@ -130,9 +130,9 @@
   </a>
 
   <!-- Product Info -->
-  <div class="p-4 flex flex-col flex-1 relative z-10">
+  <div class="px-4 pt-1.5 pb-4 flex flex-col flex-1 relative z-10">
     <a href="/product/{product.slug}" class="block flex-1">
-      <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-3 line-clamp-2 min-h-[2.5rem] group-hover:text-secondary transition-colors">
+      <h3 class="font-extrabold text-gray-900 text-[15px] md:text-base leading-snug mb-2 line-clamp-2 min-h-[2.2rem] group-hover:text-secondary transition-colors">
         {product.name}
       </h3>
     </a>

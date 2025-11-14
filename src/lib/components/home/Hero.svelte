@@ -54,8 +54,8 @@
         <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/70 backdrop-blur rounded-full text-xs font-semibold text-gray-700 border border-gray-200 shadow-sm animate-on-scroll">
           <span>⚡ AI‑Powered Toy Discovery</span>
         </div>
-        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 animate-on-scroll">
-          Welcome to 
+        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 animate-on-scroll flex items-baseline gap-2">
+          <span>Welcome to</span>
           <span class="brand-gradient typewriter caret">{typedText}</span>
         </h1>
         <p class="mt-3 text-gray-600 max-w-2xl animate-on-scroll">

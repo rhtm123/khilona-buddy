@@ -146,7 +146,7 @@
 <!-- Cart Sidebar -->
 {#if isOpen}
 <div 
-  class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl z-50 flex flex-col"
+  class="fixed inset-y-0 right-0 w-full max-w-md h-screen bg-white shadow-xl z-50 flex flex-col"
   transition:fly={{ x: 300, duration: 300 }}
 >
   <!-- Header -->
@@ -161,7 +161,7 @@
   </div>
 
   <!-- Main Scrollable Content (Info box, Out of Stock, Cart Items, Bill Details) -->
-  <div class="flex-1 overflow-y-auto p-4 space-y-4">
+  <div class="flex-1 overflow-y-auto p-4 space-y-4 min-h-0 max-h-screen">
     <!-- Out of Stock Alert -->
     {#if outOfStockCount > 0}
       <div class="mx-4 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
